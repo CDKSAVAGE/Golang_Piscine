@@ -1,0 +1,7 @@
+package main
+
+import "fmt"
+
+func append_slice(a[]int, b[]int) int{
+    return append(a, b... )
+}
