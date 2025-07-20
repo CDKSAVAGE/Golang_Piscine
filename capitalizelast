@@ -1,0 +1,22 @@
+package main
+
+import "fmt"
+
+func capitalizelast(s string)string{
+    runes:=[]rune(s)
+    n:=len(runes)
+    for i:=0;i<n;i++{
+        if runes[i]!=' ' &&(i==n-1 || runes[i+1]==' ' ){
+            if runes[i]>='a' && runes[i]<='z' {
+                runes[i]-=32
+            }
+        }
+    }
+    return string(runes)
+}
+
+
+func main (){
+    result :="Hello World I love coding " 
+    fmt.Println(capitalizelast(result))
+}
