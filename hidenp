@@ -1,0 +1,28 @@
+package main
+
+import "fmt"
+
+func hidenp(s1, s2 string)string{
+    b:=[]rune(s1)
+    c:=[]rune(s2)
+    s2_index:=0
+    for i:=0;i<len(b);i++{
+        found:=false 
+        for j:=s2_index;j<len(c);j++{
+            if b[i]==c[j]{
+                s2_index=j+1
+                found=true
+                break 
+            }
+        }
+        if!found{
+            return "0"
+        }
+    }
+    return "1"
+}
+
+func main(){
+    fmt.Println(hidenp("abc","cdk"))
+}
+ 
