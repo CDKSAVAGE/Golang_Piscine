@@ -1,0 +1,26 @@
+package main
+
+import "fmt"
+
+func toLower(ch byte) byte {
+	if ch >= 'A' && ch <= 'Z' {
+		return ch + 32
+	}
+	return ch
+}
+
+func toCamelCase(s string) string {
+	if len(s) == 0 {
+		return ""
+	}
+
+	// Convert first letter to lowercase
+	first := toLower(s[0])
+	return string(first) + s[1:]
+}
+
+func main() {
+	fmt.Println(toCamelCase("UserName"))    // userName
+	fmt.Println(toCamelCase("GetInfo"))     // getInfo
+	fmt.Println(toCamelCase(""))            // ""
+}
