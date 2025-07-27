@@ -1,0 +1,30 @@
+package main
+
+import "fmt"
+
+func wordmatch(s1, s2 string)string {
+    s1_rune:=[]rune(s1)
+    s2_rune:=[]rune(s2)
+    result:="" 
+    j:=0
+    for i:=0;i<len(s1_rune);i++{
+        found:=false 
+        for j<len(s2_rune){
+            if s1_rune[i]==s2_rune[j]{
+                result+=string(s1_rune[i])
+                j++
+                found=true
+                break 
+            }
+            j++
+        }
+       if!found{
+           return "" 
+       }
+    }
+    return result 
+}
+
+func main(){
+    fmt.Println(wordmatch("ABC", "A1BC"))
+}
